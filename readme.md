@@ -3,6 +3,9 @@ An event based, Global Keyboard and Mouse listener.
 
 [![NPM](https://nodei.co/npm-dl/lepikevents.png)](https://www.npmjs.com/package/lepikevents)
 
+<!-- Lepik Events is only part from LepikJS. Definitely try it out
+
+[![NPM](https://nodei.co/npm-dl/lepikevents.png)](https://www.npmjs.com/package/lepikevents) -->
 
 ## Installing
 
@@ -20,8 +23,8 @@ lepikEvents.events.on('keyRelease', (data) => {
 });
 
 lepikEvents.events.on('mouseClick', (data) => {
-  // Returns objects containing mouse position and button clicked 
-  console.log(data); // {x:361, y:235, button:1*} 
+  // Returns array containing mouse position x, y and button clicked 
+  console.log(data); // [361, 235, *1]
   // *1 for left, 2 for right, 3 for middle
 });
 ```

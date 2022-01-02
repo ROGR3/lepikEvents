@@ -1,6 +1,6 @@
 
 const EventEmitter2 = require('eventemitter2').EventEmitter2;
-const spawn = require('child_process').spawn;
+const { spawn } = require('child_process');
 
 const events = new EventEmitter2({ wildcard: true });
 const python = spawn(`${process.platform === "win32" ? __dirname + '/lib/lepikEvents/lepikEvents.exe' : __dirname + '/lib/lepikEvents/lepikEvents.exe'}`);
