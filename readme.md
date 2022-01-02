@@ -1,4 +1,4 @@
-# lepikEvents
+# Lepik Events
 An event based, Global Keyboard and Mouse listener.
 
 <!-- [![NPM](https://nodei.co/npm-dl/gkm.png)](https://nodei.co/npm/gkm/) -->
