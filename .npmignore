@@ -3,5 +3,5 @@ node_modules/
 build/
 dist/
 tmp/
-./lepikEvents.spec
-./main.spec
+lepikEvents.spec
+main.spec
