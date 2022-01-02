@@ -5,6 +5,6 @@ main.spec
 lepikEvents.spec
 build/
 dist/
-lib/
-# src/
-src/__pycache__/
+# lib/
+# src/__pycache__/
+src/
