@@ -6,8 +6,6 @@ An event based, Global Keyboard and Mouse listener.
 
 ## Installing
 
-Install lepikEvents with npm:
-
     npm install lepikevents
 
 ## Coding
@@ -17,14 +15,14 @@ Install lepikEvents with npm:
 const lepikEvents = require('lepikEvents');
 
 lepikEvents.events.on('keyRelease', (data) => {
-  // Returns key release as String 
+  // Returns key released as String 
   console.log(data); // e||esc||space||backspace ...
 });
 
 lepikEvents.events.on('mouseClick', (data) => {
   // Returns objects containing mouse position and button clicked 
-  // (1 for left, 2 for right, 3 for middle)
-	console.log(data); // {x:361, y:235, button:1} 
+  console.log(data); // {x:361, y:235, button:1*} 
+  // *1 for left, 2 for right, 3 for middle
 });
 ```
 
