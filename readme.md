@@ -1,7 +1,7 @@
 # Lepik Events
 An event based, Global Keyboard and Mouse listener.
 
-<!-- [![NPM](https://nodei.co/npm-dl/gkm.png)](https://nodei.co/npm/gkm/) -->
+[![NPM](https://nodei.co/npm-dl/lepikevents.png)](https://www.npmjs.com/package/lepikevents)
 
 
 ## Installing
@@ -12,7 +12,7 @@ An event based, Global Keyboard and Mouse listener.
 
 ```javascript
 // Require lepikEvents
-const lepikEvents = require('lepikEvents');
+const lepikEvents = require('lepikevents');
 
 lepikEvents.events.on('keyRelease', (data) => {
   // Returns key released as String 

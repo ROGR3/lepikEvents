@@ -5,4 +5,5 @@ main.spec
 lepikEvents.spec
 build/
 dist/
-src/
+lib/
+# src/
