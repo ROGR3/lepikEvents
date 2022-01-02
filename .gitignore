@@ -1,0 +1,9 @@
+lib/
+node_modules/
+tmp/
+test/
+./main.spec
+./lepikEvents.spec
+src/__pycache__/
+build/
+dist/
