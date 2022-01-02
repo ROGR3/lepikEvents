@@ -1,0 +1,7 @@
+src/
+node_modules/
+build/
+dist/
+tmp/
+./lepikEvents.spec
+./main.spec
