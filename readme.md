@@ -40,6 +40,8 @@ Lepik Events uses [Python keyboard](https://github.com/boppreh/keyboard) and [Py
 
 If your are on Windows, then you don't even have to have it installed, cause thanks to [Pyinstaller](https://github.com/pyinstaller/pyinstaller), the code is compiled into executable.
 
+If you are not using windows, you need to have Python3 installed.
+
 
 ## License
 The code is licensed under the MIT license (http://opensource.org/licenses/MIT). See LICENSE file.
