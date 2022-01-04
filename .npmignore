@@ -4,5 +4,4 @@ build/
 dist/
 tmp/
 test/
-lepikEvents.spec
-main.spec 
+*.spec 

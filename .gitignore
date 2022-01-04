@@ -1,8 +1,7 @@
 node_modules/
 tmp/
 test/
-main.spec
-lepikEvents.spec
+*.spec
 build/
 dist/
 lib/

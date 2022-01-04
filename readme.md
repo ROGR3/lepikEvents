@@ -3,7 +3,7 @@ An event based, Global Keyboard and Mouse listener.
 
 [![NPM](https://nodei.co/npm-dl/lepikevents.png)](https://www.npmjs.com/package/lepikevents)
 
-Lepik Events is only part from [LepikJS](https://www.npmjs.com/package/lepikjs). Definitely try it out!
+Lepik Events is only part from [LepikJS](https://www.npmjs.com/package/lepikjs). Definitely try it out
 
 
 
