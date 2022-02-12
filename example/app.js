@@ -1,5 +1,5 @@
 const lepikEvents = require("lepikevents");
-lepikEvents.events.on("keyRelease", function (data) {
+lepikEvents.events.on("keyPress", function (data) {
   console.log(data);
 })
 lepikEvents.events.on("mouseClick", function (data) {

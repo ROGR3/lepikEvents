@@ -17,8 +17,8 @@ Lepik Events is only part from [LepikJS](https://www.npmjs.com/package/lepikjs).
 // Require lepikEvents
 const lepikEvents = require('lepikevents');
 
-lepikEvents.events.on('keyRelease', (data) => {
-  // Returns key released as String 
+lepikEvents.events.on('keyPress', (data) => {
+  // Returns key pressed as String 
   console.log(data); // e||esc||space||backspace ...
 });
 
@@ -31,7 +31,7 @@ lepikEvents.events.on('mouseClick', (data) => {
 
 ## All events
 
-Curently there are only 2 events, **mouseClick** and **keyRelease**.
+Curently there are only 2 events, **mouseClick** and **keyPress**.
 I will try to implement more in future.
 
 ## Requirements

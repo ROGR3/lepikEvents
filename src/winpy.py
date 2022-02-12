@@ -3,8 +3,8 @@ import keyboard
 import sys
 
 
-def keyboardRelease(e: tuple) -> None:
-    print("keyRelease:", e.name)
+def keyPress(e: tuple) -> None:
+    print("keyPress:", e.name)
     sys.stdout.flush()
 
 
@@ -13,8 +13,8 @@ def mousePress(button: int) -> None:
     print("mouseClick:", list(finalTuple))
     sys.stdout.flush()
 
+keyboard.on_press(keyPress)
 
-keyboard.on_release(keyboardRelease)
 
 mouse.on_click(lambda: mousePress(1))
 mouse.on_right_click(lambda: mousePress(2))

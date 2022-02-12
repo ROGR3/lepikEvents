@@ -1,10 +1,12 @@
 {
   "name": "lepikevents",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Global mouse and keyboard events Listener",
   "main": "./index.js",
   "scripts": {
-    "build:py": "pyinstaller ./src/winpy.py --distpath /build -F --workpath ./tmp -y",
+    "build:win": "pyinstaller ./src/winpy.py --distpath ./build -F --workpath ./tmp -y",
+    "build:unix": "node src/buildUnix.js",
+    "build": "npm run build:win && npm run build:unix",
     "postinstall": "node src/platform.js"
   },
   "keywords": [
