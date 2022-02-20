@@ -22,6 +22,11 @@ lepikEvents.events.on('keyPress', (data) => {
   console.log(data); // e||esc||space||backspace ...
 });
 
+lepikEvents.events.on('keyRelease', (data) => {
+  // Returns key released as String 
+  console.log(data); // e||esc||space||backspace ...
+});
+
 lepikEvents.events.on('mouseClick', (data) => {
   // Returns array containing mouse position x, y and button clicked 
   console.log(data); // [361, 235, *1]

@@ -3,9 +3,16 @@ import keyboard
 import sys
 
 
-def keyPress(e: tuple) -> None:
-    print("keyPress:", e.name)
+def handle_hook(e: tuple) -> None:
+    if e.event_type == "down":
+        print("keyPress:", e.name)
+    else :
+        print("keyRelease:", e.name)
     sys.stdout.flush()
+
+
+
+keyboard.hook(handle_hook)
 
 
 def mousePress(button: int) -> None:
@@ -13,12 +20,11 @@ def mousePress(button: int) -> None:
     print("mouseClick:", list(finalTuple))
     sys.stdout.flush()
 
-keyboard.on_press(keyPress)
-
 
 mouse.on_click(lambda: mousePress(1))
 mouse.on_right_click(lambda: mousePress(2))
 mouse.on_middle_click(lambda: mousePress(3))
 
 
-input()
+keyboard.wait()
+
