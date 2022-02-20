@@ -5,6 +5,7 @@ An event based, Global Keyboard and Mouse listener.
 
 Lepik Events is only part from [LepikJS](https://www.npmjs.com/package/lepikjs). Definitely try it out
 
+Visit LepikJS's [website](https://lepikjs.netlify.app/).
 
 
 ## Installing
