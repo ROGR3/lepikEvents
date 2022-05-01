@@ -33,6 +33,12 @@ lepikEvents.events.on('mouseClick', (data) => {
   console.log(data); // [361, 235, *1]
   // *1 for left, 2 for right, 3 for middle
 });
+
+lepikEvents.events.on('mouseDoubleClick', (data) => {
+  // Returns array containing mouse position x, y and button double-clicked 
+  console.log(data); // [361, 235, *1]
+  // *1 for left, 2 for right, 3 for middle
+});
 ```
 
 ## All events
