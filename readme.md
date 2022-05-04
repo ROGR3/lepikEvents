@@ -43,7 +43,7 @@ lepikEvents.events.on('mouseDoubleClick', (data) => {
 
 ## All events
 
-Curently there are only 2 events, **mouseClick** and **keyPress**.
+Curently there are 3 events, **mouseClick**, **mouseDoubleClick** and **keyPress**.
 I will try to implement more in future.
 
 ## Requirements
