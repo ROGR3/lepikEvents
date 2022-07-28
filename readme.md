@@ -54,4 +54,4 @@ If you are not using windows, you need to have atleast Python3 installed.
 It's better to have atleast node13 but not required.
 
 ## License
-The code is licensed under the MIT license (http://opensource.org/licenses/MIT). See LICENSE file.
+The code is licensed under the MIT license (http://opensource.org/licenses/MIT). See [LICENSE](./LICENSE) file.
