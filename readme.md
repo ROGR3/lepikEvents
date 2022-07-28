@@ -7,7 +7,6 @@ Lepik Events is only part from [LepikJS](https://www.npmjs.com/package/lepikjs).
 
 Visit LepikJS's [website](https://lepikjs.netlify.app/).
 
-
 ## Installing
 
     npm install lepikevents
@@ -53,7 +52,6 @@ If your are on Windows, then you don't even have to have it installed, cause tha
 
 If you are not using windows, you need to have atleast Python3 installed.
 It's better to have atleast node13 but not required.
-
 
 ## License
 The code is licensed under the MIT license (http://opensource.org/licenses/MIT). See LICENSE file.
