@@ -1,6 +1,6 @@
 {
   "name": "lepikevents",
-  "version": "1.5.14",
+  "version": "1.5.15",
   "description": "Global mouse and keyboard events Listener",
   "main": "./index.js",
   "scripts": {
