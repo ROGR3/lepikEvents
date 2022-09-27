@@ -38,11 +38,16 @@ lepikEvents.events.on('mouseDoubleClick', (data) => {
   console.log(data); // [361, 235, *1]
   // *1 for left, 2 for right, 3 for middle
 });
+
+lepikEvents.events.on('mouseMove', (data) => {
+  // Returns array containing mouse x, y and time (seconds)
+  console.log(data); // [20, -35, 1663787912.698]
+});
 ```
 
 ## All events
 
-Curently there are 4 events in total, **mouseClick**, **mouseDoubleClick**, **keyPress** and **keyRelease**.
+Curently there are 5 events in total, **mouseMove**, **mouseClick**, **mouseDoubleClick**, **keyPress** and **keyRelease**.
 
 ## Requirements
 
