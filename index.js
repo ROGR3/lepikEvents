@@ -1,4 +1,4 @@
-
+const process = require( 'node:process');
 const EventEmitter2 = require('eventemitter2').EventEmitter2;
 const { spawn } = require('child_process');
 
@@ -17,6 +17,21 @@ python.stdout.on('data', function (data) {
     }
     events.emit(ev[0], ar);
   }
+});
+
+
+function cleanExit(){
+  if (!python.killed){
+    python.kill();
+  }
+  process.exit();
+}
+
+process.on('SIGINT',cleanExit);
+process.on('SIGTERM',cleanExit);
+process.on('exit',()=>{
+  if(!python.killed)
+    python.kill();
 });
 
 module.exports = { events };
