@@ -11,6 +11,17 @@ Visit LepikJS's [website](https://lepikjs.netlify.app/).
 
     npm install lepikevents
 
+> ㅤ
+> ## New Feature v1.6.0+
+>
+> **LepikEvents now includes a method for capturing mouse move event!**
+>
+> > [lepikevents.events.on("mouseMove", cb)](#all-events)
+> 
+> **JS object is passed to callback function. It contain these values:** *x, y, time*
+> ㅤ
+>  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv1.6.0
+
 ## Coding
 
 ```javascript

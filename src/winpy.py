@@ -37,8 +37,6 @@ mouse.on_right_click(lambda: mousePress(2))
 mouse.on_middle_click(lambda: mousePress(3))
 mouse.on_double_click(lambda: mouseDoubleClick(1))
 
-
-
 def mouse_poll_loop():
     while True:
         mouse.wait()
