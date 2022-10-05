@@ -1,6 +1,6 @@
 {
   "name": "lepikevents",
-  "version": "1.6.2",
+  "version": "1.6.4",
   "description": "Global mouse and keyboard events Listener",
   "main": "./index.js",
   "scripts": {
@@ -23,5 +23,14 @@
   "license": "MIT",
   "dependencies": {
     "eventemitter2": "^6.4.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borecjeborec1/lepikEvents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/borecjeborec1/lepikEvents/issues"
+  },
+  "homepage": "https://github.com/borecjeborec1/lepikEvents#readme"
 }
