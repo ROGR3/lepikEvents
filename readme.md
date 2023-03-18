@@ -12,15 +12,15 @@ Visit LepikJS's [website](https://lepikjs.netlify.app/).
     npm install lepikevents
 
 > ㅤ
-> ## New Feature v1.6.9+
+> ## New Feature v1.7.0+
 >
 > **LepikEvents now includes a method for capturing mouseUp and mouseDown events!**
 >
 > > [lepikevents.events.on("mouseDown", cb)](#all-events)
 > 
-> **JS object is passed to callback function. It contain these values:** *x, y, time*
+> **JS Array is passed to callback function. It contain these values:** *x, y*
 > ㅤ
->  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv1.6.9
+>  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv1.7.0
 
 ## Coding
 
