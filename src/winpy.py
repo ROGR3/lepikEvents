@@ -17,9 +17,20 @@ def handle_key_hook(e: tuple) -> None:
     else :
         safe_print("keyRelease:", e.name)
 
+mousePosX = 0
+mousePosY = 0
 def handle_mouse_hook(e: tuple) -> None:
+    global mousePosX
+    global mousePosY
     if type(e) == mouse.MoveEvent:
+        mousePosX = e.x
+        mousePosY = e.y
         safe_print("mouseMove:[",e.x,",",e.y,",",e.time,"]")
+    elif type(e) == mouse.ButtonEvent:
+        if  e.event_type == "down":
+            safe_print("mouseDown:[",mousePosX,",",mousePosY,"]")
+        else:
+            safe_print("mouseUp:[",mousePosX,",",mousePosY,"]")
 
 keyboard.hook(handle_key_hook)
 mouse.hook(handle_mouse_hook)
@@ -31,6 +42,7 @@ def mousePress(button: int) -> None:
 def mouseDoubleClick(button: int) -> None:
     finalTuple = mouse.get_position() + (button,)
     safe_print("mouseDoubleClick:", list(finalTuple))
+    
 
 mouse.on_click(lambda: mousePress(1))
 mouse.on_right_click(lambda: mousePress(2))

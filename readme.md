@@ -12,15 +12,15 @@ Visit LepikJS's [website](https://lepikjs.netlify.app/).
     npm install lepikevents
 
 > ㅤ
-> ## New Feature v1.6.0+
+> ## New Feature v1.6.9+
 >
-> **LepikEvents now includes a method for capturing mouse move event!**
+> **LepikEvents now includes a method for capturing mouseUp and mouseDown events!**
 >
-> > [lepikevents.events.on("mouseMove", cb)](#all-events)
+> > [lepikevents.events.on("mouseDown", cb)](#all-events)
 > 
 > **JS object is passed to callback function. It contain these values:** *x, y, time*
 > ㅤ
->  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv1.6.0
+>  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv1.6.9
 
 ## Coding
 
@@ -53,6 +53,16 @@ lepikEvents.events.on('mouseDoubleClick', (data) => {
 lepikEvents.events.on('mouseMove', (data) => {
   // Returns array containing mouse x, y and time (seconds)
   console.log(data); // [20, -35, 1663787912.698]
+});
+
+lepikEvents.events.on('mouseUp', (data) => {
+  // Returns array containing mouse x, y
+  console.log(data); // [20, 35]
+});
+
+lepikEvents.events.on('mouseDown', (data) => {
+  // Returns array containing mouse x, y
+  console.log(data); // [20, 75]
 });
 ```
 
