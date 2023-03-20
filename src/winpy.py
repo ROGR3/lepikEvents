@@ -27,10 +27,10 @@ def handle_mouse_hook(e: tuple) -> None:
         mousePosY = e.y
         safe_print("mouseMove:[",e.x,",",e.y,",",e.time,"]")
     elif type(e) == mouse.ButtonEvent:
-        if  e.event_type == "down":
-            safe_print("mouseDown:[",mousePosX,",",mousePosY,"]")
-        else:
+        if  e.event_type == "up" :
             safe_print("mouseUp:[",mousePosX,",",mousePosY,"]")
+        else:
+            safe_print("mouseDown:[",mousePosX,",",mousePosY,"]")
 
 keyboard.hook(handle_key_hook)
 mouse.hook(handle_mouse_hook)
