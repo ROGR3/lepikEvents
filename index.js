@@ -1,4 +1,4 @@
-const process = require( 'node:process');
+const process = require('node:process');
 const EventEmitter2 = require('eventemitter2').EventEmitter2;
 const { spawn } = require('child_process');
 
@@ -19,19 +19,21 @@ python.stdout.on('data', function (data) {
   }
 });
 
+function killProcess(_pid) {
+  spawn("taskkill", ["/pid", _pid, '/f', '/t']);
+}
 
-function cleanExit(){
-  if (!python.killed){
-    python.kill();
-  }
+
+
+function cleanExit() {
+  killProcess(python.pid)
   process.exit();
 }
 
-process.on('SIGINT',cleanExit);
-process.on('SIGTERM',cleanExit);
-process.on('exit',()=>{
-  if(!python.killed)
-    python.kill();
+process.on('SIGINT', cleanExit);
+process.on('SIGTERM', cleanExit);
+process.on('exit', () => {
+  killProcess(python.pid)
 });
 
 module.exports = { events };
