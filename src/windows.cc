@@ -26,7 +26,18 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
   if (nCode == HC_ACTION) {
     KBDLLHOOKSTRUCT *keyboardHook = (KBDLLHOOKSTRUCT *)lParam;
     if (wParam == WM_KEYDOWN) {
-      std::cout << "keyPress: " << keyboardHook->vkCode << std::endl;
+      char buffer[256];
+      if (GetKeyNameTextA(keyboardHook->scanCode << 16, buffer,
+                          sizeof(buffer))) {
+        std::cout << "keyPress: " << buffer << std::endl;
+        std::cout << "keyDown: " << buffer << std::endl;
+      }
+    } else if (wParam == WM_KEYUP) {
+      char buffer[256];
+      if (GetKeyNameTextA(keyboardHook->scanCode << 16, buffer,
+                          sizeof(buffer))) {
+        std::cout << "keyUp: " << buffer << std::endl;
+      }
     }
   }
   return CallNextHookEx(NULL, nCode, wParam, lParam);
@@ -37,22 +48,45 @@ LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
     MSLLHOOKSTRUCT *mouseHook = (MSLLHOOKSTRUCT *)lParam;
     switch (wParam) {
     case WM_MOUSEMOVE:
-      std::cout << "mouseMove:[" << mouseHook->pt.x << ", " << mouseHook->pt.y
-                << "]" << std::endl;
+      std::cout << "mouseMove:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << "," << mouseHook->time << "]" << std::endl;
       break;
     case WM_LBUTTONDOWN:
-      std::cout << "mouseDown:[" << mouseHook->pt.x << ", " << mouseHook->pt.y
-                << "]" << std::endl;
+      std::cout << "mouseClick:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",1]" << std::endl;
+      std::cout << "mouseDown:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",1]" << std::endl;
       break;
     case WM_LBUTTONUP:
-      std::cout << "mouseUp:[" << mouseHook->pt.x << ", " << mouseHook->pt.y
-                << "]" << std::endl;
+      std::cout << "mouseUp:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",1]" << std::endl;
       break;
     case WM_RBUTTONDOWN:
-      std::cout << "Right mouse button down" << std::endl;
+      std::cout << "mouseClick:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",2]" << std::endl;
+      std::cout << "mouseDown:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",2]" << std::endl;
       break;
     case WM_RBUTTONUP:
-      std::cout << "Right mouse button up" << std::endl;
+      std::cout << "mouseUp:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",2]" << std::endl;
+      break;
+    case WM_MBUTTONDOWN:
+      std::cout << "mouseClick:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",3]" << std::endl;
+      std::cout << "mouseDown:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",3]" << std::endl;
+      break;
+    case WM_MBUTTONUP:
+      std::cout << "mouseUp:[" << mouseHook->pt.x << "," << mouseHook->pt.y
+                << ",3]" << std::endl;
+      break;
+    case WM_LBUTTONDBLCLK:
+      std::cout << "mouseDoubleClick:[" << mouseHook->pt.x << ","
+                << mouseHook->pt.y << ",1]" << std::endl;
+    case WM_RBUTTONDBLCLK:
+      std::cout << "mouseDoubleClick:[" << mouseHook->pt.x << ","
+                << mouseHook->pt.y << ",2]" << std::endl;
       break;
     }
   }
