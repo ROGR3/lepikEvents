@@ -1,9 +1,8 @@
-const process = require('node:process');
 const EventEmitter2 = require('eventemitter2').EventEmitter2;
 const { spawn } = require('child_process');
 
 const events = new EventEmitter2({ wildcard: true });
-const python = process.platform === "win32" ? spawn(`${__dirname + '/build/winpy.exe'}`) : spawn("sudo", ["python", `${__dirname + '/lib/unixpy.py'}`]);
+const python = process.platform === "win32" ? spawn(`${__dirname + '/build/windows.exe'}`) : spawn("sudo", ["python", `${__dirname + '/lib/unixpy.py'}`]);
 
 python.stdout.on('data', function (data) {
   data = data.toString().split(/\r\n|\r|\n/).filter(ar => { return ar })
@@ -33,7 +32,7 @@ function cleanExit() {
 process.on('SIGINT', cleanExit);
 process.on('SIGTERM', cleanExit);
 process.on('exit', () => {
-  killProcess(python.pid)
+  killProcess()
 });
 
 module.exports = { events };
