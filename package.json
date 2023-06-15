@@ -4,12 +4,11 @@
   "description": "Global mouse and keyboard events Listener",
   "main": "./index.js",
   "scripts": {
-    "build:win": "pyinstaller ./src/winpy.py --distpath ./build -F --workpath ./tmp -y",
-    "build:unix": "node src/buildUnix.js",
-    "build": "npm run build:win && npm run build:unix",
+    "build": "g++ src/win/winEvents.cc -s -O3 -o src/win/winEvents",
     "postinstall": "node src/platform.js"
   },
   "keywords": [
+    "automation",
     "mouse",
     "keyboard",
     "events",
@@ -19,8 +18,7 @@
     "autohotkey",
     "python",
     "c++",
-    "cc",
-    "automation"
+    "cc"
   ],
   "author": "borecjeborec1",
   "license": "MIT",

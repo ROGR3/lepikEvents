@@ -33,7 +33,11 @@ lepikEvents.events.on('keyPress', (data) => {
   console.log(data); // e||esc||space||backspace ...
 });
 
-lepikEvents.events.on('keyRelease', (data) => {
+lepikEvents.events.on('keyDown', (data) => {
+  // Returns key pushed as String 
+  console.log(data); // e||esc||space||backspace ...
+});
+lepikEvents.events.on('keyUp', (data) => {
   // Returns key released as String 
   console.log(data); // e||esc||space||backspace ...
 });
@@ -68,7 +72,7 @@ lepikEvents.events.on('mouseDown', (data) => {
 
 ## All events
 
-Curently there are 5 events in total, **mouseMove**, **mouseClick**, **mouseDoubleClick**, **keyPress** and **keyRelease**.
+Curently there are 5 events in total, **mouseMove**, **mouseClick**, **mouseDoubleClick**, **keyPress**, **keyUp** and **keyDown**.
 
 ## Requirements
 

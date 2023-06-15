@@ -1,10 +1,5 @@
-src/__pycache__
 lib/__pycache__
-src/winpy.py
+lib/*/__pycache__
 node_modules/
-dist/
-tmp/
 test/
-example/
-*.spec 
-backup/
+examples/
