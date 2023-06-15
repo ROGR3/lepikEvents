@@ -7,20 +7,30 @@ Lepik Events is only part from [LepikJS](https://www.npmjs.com/package/lepikjs).
 
 Visit LepikJS's [website](https://lepikjs.netlify.app/).
 
+
+> ㅤ
+> ## New Feature v2.0.0+
+>
+> **LepikEvents now does not ship whole python binary!**
+> *The performance is up to 20x better with 10x smaller size!*
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv2.0.0
+ㅤㅤ
+
+
 ## Installing
 
     npm install lepikevents
 
-> ㅤ
-> ## New Feature v1.7.0+
->
-> **LepikEvents now includes a method for capturing mouseUp and mouseDown events!**
->
-> > [lepikevents.events.on("mouseDown", cb)](#all-events)
-> 
-> **JS Array is passed to callback function. It contain these values:** *x, y*
-> ㅤ
->  ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv1.7.0
+
+## Hello World!
+```javascript
+// Require lepikEvents
+const lepikEvents = require('lepikevents');
+
+lepikEvents.events.on('mouseClick', (data) => {
+  console.log("Hello World!"); //Should print "Hello World!" after each click of mouse
+});
+```
 
 ## Coding
 
@@ -72,16 +82,18 @@ lepikEvents.events.on('mouseDown', (data) => {
 
 ## All events
 
-Curently there are 5 events in total, **mouseMove**, **mouseClick**, **mouseDoubleClick**, **keyPress**, **keyUp** and **keyDown**.
+Curently there are 6 events in total, **mouseMove**, **mouseClick**, **mouseDoubleClick**, **keyPress**, **keyUp** and **keyDown**.
 
 ## Requirements
 
-Lepik Events uses [Python keyboard](https://github.com/boppreh/keyboard) and [Python mouse](https://github.com/boppreh/mouse) which runs on Python. 
+Lepik Events uses native c++ winapi on windows.
+On unix systems, it uses [Python keyboard](https://github.com/boppreh/keyboard) and [Python mouse](https://github.com/boppreh/mouse) which runs on Python. So python is needed on non-windows systems.
 
-If your are on Windows, then you don't even have to have it installed, cause thanks to [Pyinstaller](https://github.com/pyinstaller/pyinstaller), the code is compiled into executable.
+If your are on Windows, then you don't even have to have anything installed. The code is lepikEvents already compiled into executable.
 
 If you are not using windows, you need to have atleast Python3 installed.
-It's better to have atleast node13 but not required.
+
+PS: It's better to have atleast node13 but not required.
 
 ## License
 The code is licensed under the MIT license (http://opensource.org/licenses/MIT). See [LICENSE](./LICENSE) file.
