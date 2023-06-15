@@ -14,7 +14,6 @@ Visit LepikJS's [website](https://lepikjs.netlify.app/).
 > **LepikEvents now does not ship whole python binary!**
 > *The performance is up to 20x better with 10x smaller size!*
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤLepikEventsv2.0.0
-ㅤㅤ
 
 
 ## Installing
@@ -82,18 +81,19 @@ lepikEvents.events.on('mouseDown', (data) => {
 
 ## All events
 
-Curently there are 6 events in total, **mouseMove**, **mouseClick**, **mouseDoubleClick**, **keyPress**, **keyUp** and **keyDown**.
+Curently there are 7 events in total, **mouseMove**, **mouseClick**, **mouseDown**, **mouseUp**, **keyPress**, **keyUp** and **keyDown**.
 
 ## Requirements
 
-Lepik Events uses native c++ winapi on windows.
-On unix systems, it uses [Python keyboard](https://github.com/boppreh/keyboard) and [Python mouse](https://github.com/boppreh/mouse) which runs on Python. So python is needed on non-windows systems.
+Lepik Events uses native c++ winapi on windows, so you don't have to have anything installed.
 
-If your are on Windows, then you don't even have to have anything installed. The code is lepikEvents already compiled into executable.
+On unix systems, it uses [Python keyboard](https://github.com/boppreh/keyboard) and [Python mouse](https://github.com/boppreh/mouse) which runs on Python. So python is needed on non-windows systems. You need to have atleast Python3 installed.
 
-If you are not using windows, you need to have atleast Python3 installed.
 
-PS: It's better to have atleast node13 but not required.
+> **Windows systems:** Nothing needed
+> **Unix systems:** Python3
+> 
+>  *PS: It's better to have atleast node13 but not required.*
 
 ## License
 The code is licensed under the MIT license (http://opensource.org/licenses/MIT). See [LICENSE](./LICENSE) file.
