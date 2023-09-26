@@ -4,7 +4,8 @@
 LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam);
 LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam);
 
-int main() {
+int main()
+{
   HINSTANCE hInstance = GetModuleHandle(NULL);
   HHOOK keyboardHook =
       SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc, hInstance, 0);
@@ -12,7 +13,8 @@ int main() {
       SetWindowsHookEx(WH_MOUSE_LL, LowLevelMouseProc, hInstance, 0);
 
   MSG message;
-  while (GetMessage(&message, NULL, 0, 0)) {
+  while (GetMessage(&message, NULL, 0, 0))
+  {
     TranslateMessage(&message);
     DispatchMessage(&message);
   }
@@ -22,20 +24,27 @@ int main() {
   return 0;
 }
 
-LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
-  if (nCode == HC_ACTION) {
+LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+  if (nCode == HC_ACTION)
+  {
     KBDLLHOOKSTRUCT *keyboardHook = (KBDLLHOOKSTRUCT *)lParam;
-    if (wParam == WM_KEYDOWN) {
+    if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN)
+    {
       char buffer[256];
       if (GetKeyNameTextA(keyboardHook->scanCode << 16, buffer,
-                          sizeof(buffer))) {
+                          sizeof(buffer)))
+      {
         std::cout << "keyPress: " << buffer << std::endl;
         std::cout << "keyDown: " << buffer << std::endl;
       }
-    } else if (wParam == WM_KEYUP) {
+    }
+    else if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)
+    {
       char buffer[256];
       if (GetKeyNameTextA(keyboardHook->scanCode << 16, buffer,
-                          sizeof(buffer))) {
+                          sizeof(buffer)))
+      {
         std::cout << "keyUp: " << buffer << std::endl;
       }
     }
@@ -43,10 +52,13 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
   return CallNextHookEx(NULL, nCode, wParam, lParam);
 }
 
-LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
-  if (nCode == HC_ACTION) {
+LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+  if (nCode == HC_ACTION)
+  {
     MSLLHOOKSTRUCT *mouseHook = (MSLLHOOKSTRUCT *)lParam;
-    switch (wParam) {
+    switch (wParam)
+    {
     case WM_MOUSEMOVE:
       std::cout << "mouseMove:[" << mouseHook->pt.x << "," << mouseHook->pt.y
                 << "," << mouseHook->time << "]" << std::endl;
