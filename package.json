@@ -19,17 +19,17 @@
     "c++",
     "cc"
   ],
-  "author": "borecjeborec1",
+  "author": "ROGR",
   "license": "MIT",
   "dependencies": {
     "eventemitter2": "^6.4.5"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borecjeborec1/lepikEvents.git"
+    "url": "git+https://github.com/ROGR3/lepikEvents.git"
   },
   "bugs": {
-    "url": "https://github.com/borecjeborec1/lepikEvents/issues"
+    "url": "https://github.com/ROGR3/lepikEvents/issues"
   },
-  "homepage": "https://github.com/borecjeborec1/lepikEvents#readme"
+  "homepage": "https://github.com/ROGR3/lepikEvents#readme"
 }
